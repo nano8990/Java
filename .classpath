@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Practice1_Hellojava/src"/>
+	<classpathentry kind="src" path="Practice10_For/src"/>
+	<classpathentry kind="src" path="Practice11_Array/src"/>
+	<classpathentry kind="src" path="Practice2_Printout/src"/>
+	<classpathentry kind="src" path="Practice3_Chartest/src"/>
+	<classpathentry kind="src" path="Practice4_Downcasting/src"/>
+	<classpathentry kind="src" path="Practice5_Scanner/src"/>
+	<classpathentry kind="src" path="Practice6_Boolean/src"/>
+	<classpathentry kind="src" path="Practice7_Cast/src"/>
+	<classpathentry kind="src" path="Practice8_Random/src"/>
+	<classpathentry kind="src" path="Practice9_If/src"/>
+	<classpathentry kind="output" path="Practice10_For/bin"/>
+</classpath>
