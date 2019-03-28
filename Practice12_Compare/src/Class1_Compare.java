@@ -15,4 +15,7 @@ public class Class1_Compare {
 	public void aaaa() {
 		System.out.println("214124");
 	}
+	public void hello() {
+		System.out.println("Hello Java");
+	}
 }

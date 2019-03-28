@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Class5 {
+public class RowColumns {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int scanner_Input = 0;
@@ -18,15 +18,21 @@ public class Class5 {
 					}
 				}
 				arr[i][j] = scanner_Input;
+			}
+		}
+		
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
 				arr[i][3] += arr[i][j];
 				arr[3][j] += arr[i][j];
 			}
+
 			arr[3][3] += arr[i][3];
 		}
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				System.out.print(arr[i][j] + " ");
+				System.out.print(arr[i][j] + "	");
 			}
 			System.out.println();
 		}
