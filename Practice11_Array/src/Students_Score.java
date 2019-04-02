@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Students_Score {
@@ -97,7 +96,7 @@ public class Students_Score {
 		}
 
 		if (student_Name_Scanner.equalsIgnoreCase("quit")) {
-
+			System.out.println("취소");
 		} else {
 			System.out.println("\r\n전체 학생의 국어 성적 총합 : " + sum_KoreanScore);
 			System.out.println("국어성적 평균 : " + (sum_KoreanScore / total_Student));

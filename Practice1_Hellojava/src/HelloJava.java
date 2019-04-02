@@ -14,8 +14,8 @@ public class HelloJava {
 		int i = 100;
 		double d = 10.5555;
 		boolean var_boo = true;
-		char var_char = '°¡';
-		String var_str = "°¡³ª";
+		char var_char = 'ê°€';
+		String var_str = "ì•ˆë…•";
 
 		System.out.println(i);
 		System.out.println(d);
