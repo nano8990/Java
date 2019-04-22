@@ -25,8 +25,8 @@ import java.awt.event.MouseEvent;
 
 public class selloutMgmtView {
 
-	String selloutTable = "KOPO_PRODUCT_VOLUME_HK";
-	String regionTable = "REGION_MASTER_HK";
+	String selloutTable = "KOPO_PRODUCT_VOLUME_DJ2";
+	String regionTable = "REGION_MASTER_DJ2";
 	
 	private JFrame frame;
 	private JTable tableSellout;
@@ -35,9 +35,9 @@ public class selloutMgmtView {
 
 	// DataBase Connection information
 	String JDBC_DRIVER = "oracle.jdbc.OracleDriver";  
-	String DB_URL = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
-	String USERNAME = "kopo";
-	String PASSWORD = "kopo";
+	String DB_URL = "jdbc:oracle:thin:@192.168.110.3:1522/xe";
+	String USERNAME = "DJ2019";
+	String PASSWORD = "DJ2019";
 			
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
@@ -147,7 +147,7 @@ public class selloutMgmtView {
 		JButton btnUpdateSellout = new JButton("\uC218\uC815");
 		btnUpdateSellout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int response = JOptionPane.showConfirmDialog (null, "º±≈√«— ∑πƒ⁄µÂ¿« ∆«∏≈∑Æ∏∏ æ˜µ•¿Ã∆ÆµÀ¥œ¥Ÿ.","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int response = JOptionPane.showConfirmDialog (null, "ÌåêÎß§Îüâ Ï†ïÎ≥¥Îßå Î≥ÄÍ≤Ω Í∞ÄÎä•Ìï©ÎãàÎã§.","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
 			    if (response == JOptionPane.YES_OPTION) {	
 				try {
@@ -167,7 +167,7 @@ public class selloutMgmtView {
 		btnDeleteSellout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				int response = JOptionPane.showConfirmDialog (null, "º±≈√«— ∑πƒ⁄µÂ∏∏ ªË¡¶µÀ¥œ¥Ÿ.","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int response = JOptionPane.showConfirmDialog (null, "ÏÑ†ÌÉùÌïú ÏßÄÏó≠/ÏÉÅÌíà/Ïó∞Ï£ºÏ∞® Ïã§Ï†ÅÏ†ïÎ≥¥Îßå ÏÇ≠Ï†úÎê©ÎãàÎã§.","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
 			    if (response == JOptionPane.YES_OPTION) { //The ISSUE is here	
 				
@@ -193,8 +193,8 @@ public class selloutMgmtView {
 		frame.getContentPane().add(textRegion);
 		textRegion.setColumns(10);
 		
-		//table √ ±‚ º≥¡§
-		String[] columnNames = { "¡ˆø™ID","¡ˆø™∏Ì","ªÛ«∞¡§∫∏","ø¨¡÷¬˜","∆«∏≈∑Æ" }; 
+		//table ÔøΩ ±ÔøΩ ÔøΩÔøΩÔøΩÔøΩ
+		String[] columnNames = { "REGION_ID","REGION_NAME","PRODUCT","YEARWEEK","QTY" }; 
 		
 		scrollPane.setViewportView(tableSellout);
 		tableSellout.setModel(new DefaultTableModel(
@@ -277,7 +277,7 @@ public class selloutMgmtView {
 		model.setNumRows(0);
 
 		String selectSql = "SELECT A.REGIONID, A.REGIONNAME, "
-				+ "B.PRODUCTGROUP, B.YEARWEEK, B.VOLUME "
+				+ "B.PRODUCTGROUP, B.YEARWEEK, B.QTY "
 				+ "FROM "+regionTable+" A "
 				+ "LEFT JOIN "+selloutTable+" B ON A.REGIONID = B.REGIONID "
 				+ "ORDER BY A.REGIONNAME, PRODUCTGROUP, YEARWEEK";
@@ -307,7 +307,7 @@ public class selloutMgmtView {
 		String qty = textQtyU.getText();
 
 		try {
-		String sql  = "INSERT INTO " + selloutTable+ " (REGIONID, PRODUCTGROUP, YEARWEEK, VOLUME) "
+		String sql  = "INSERT INTO " + selloutTable+ " (REGIONID, PRODUCTGROUP, YEARWEEK, QTY) "
 				+ "VALUES(?, ?, ?, ?)";
 
 	     stmt =  conn.prepareStatement(sql);
@@ -340,7 +340,7 @@ public class selloutMgmtView {
 	    
        String updateQty = textQtyU.getText();
 
-       String updateSql  = "UPDATE " + selloutTable + " SET VOLUME = ?"
+       String updateSql  = "UPDATE " + selloutTable + " SET QTY = ?"
 	     		+ " WHERE REGIONID = ? AND PRODUCTGROUP = ? AND YEARWEEK = ?";
         
 		try {
