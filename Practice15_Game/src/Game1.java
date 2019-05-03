@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Game1 {
 	public static void main(String[] args) {
 		
-		Player player = new Player("동지형성", 100000, 10000, 10, 150, 50); //(이름, 체력, 공격력, 크리확률, 크리데미지, 회피율)
+		Player player = new Player("동지형성", 1, 10000, 10, 150, 50); //(이름, 체력, 공격력, 크리확률, 크리데미지, 회피율)
 		Enemy[] enemy = new Enemy[3];
 		enemy[0] = new Enemy("과제", 10, 5, 10, 120, 10);
 		enemy[1] = new Enemy("시험", 10, 5, 10, 120, 10);

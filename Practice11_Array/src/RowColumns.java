@@ -2,40 +2,45 @@ import java.util.Scanner;
 
 public class RowColumns {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int scanner_Input = 0;
-		int[][] arr = new int[4][4];
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+		Scanner scanner = new Scanner(System.in);
+		int scannerInput = 0;
+		int scanRowColumnNumber = 4;
+		int[][] arr = new int[scanRowColumnNumber + 1][scanRowColumnNumber + 1];
+
+		// 입력부
+		for (int i = 0; i < scanRowColumnNumber; i++) {
+			for (int j = 0; j < scanRowColumnNumber; j++) {
 				while (true) {
 					try {
 						System.out.printf("입력 (%d행 %d열) : ", i + 1, j + 1);
-						scanner_Input = Integer.parseInt(s.nextLine());
+						scannerInput = Integer.parseInt(scanner.nextLine());
 						break;
 					} catch (NumberFormatException e) {
 						System.out.print("다시 ");
-						s = new Scanner(System.in);
+						scanner = new Scanner(System.in);
 					}
 				}
-				arr[i][j] = scanner_Input;
+				arr[i][j] = scannerInput;
 			}
 		}
-		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				arr[i][3] += arr[i][j];
-				arr[3][j] += arr[i][j];
+
+		// 계산부
+		for (int i = 0; i < scanRowColumnNumber; i++) {
+			for (int j = 0; j < scanRowColumnNumber; j++) {
+				arr[i][scanRowColumnNumber] += arr[i][j];
+				arr[scanRowColumnNumber][j] += arr[i][j];
 			}
 
-			arr[3][3] += arr[i][3];
+			arr[scanRowColumnNumber][scanRowColumnNumber] += arr[i][scanRowColumnNumber];
 		}
 
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		// 출력부
+		for (int i = 0; i < scanRowColumnNumber + 1; i++) {
+			for (int j = 0; j < scanRowColumnNumber + 1; j++) {
 				System.out.print(arr[i][j] + "	");
 			}
 			System.out.println();
 		}
-
+		scanner.close();
 	}
 }

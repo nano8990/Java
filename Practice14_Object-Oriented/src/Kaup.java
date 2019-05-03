@@ -9,8 +9,8 @@ public class Kaup {
 		Scanner scan = new Scanner(System.in);
 		while (true) {
 			try {
-				System.out.print("키를 입력하세요(m) : ");
-				this.height = Double.parseDouble(scan.nextLine());
+				System.out.print("키를 입력하세요(cm) : ");
+				this.height = (Double.parseDouble(scan.nextLine()) / 100);
 				break;
 			} catch (NumberFormatException e) {
 				System.out.println("숫자만 입력하세요");

@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class JinSu {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		double jinSu = 8;
-		double wishToChange = 8;
+		double jinSu = 2;
+		double wishToChange = 10;
 		double inputJinSu;
 		while (true) {
 			try {
