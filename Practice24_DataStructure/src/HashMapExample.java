@@ -3,15 +3,15 @@ import java.util.Map;
 
 public class HashMapExample {
 	public static void main(String[] args) {
-		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
-		for(int i = 0; i < 10; i++) {
-			map1.put(i, "AAAA" + i);
-		}
-		map1.put(0, "BBBB");
-		map1.put(0, "CCCC");
-		map1.put(0, "DDDD");
-		
-		System.out.println(map1);
+//		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
+//		for(int i = 0; i < 10; i++) {
+//			map1.put(i, "AAAA" + i);
+//		}
+//		map1.put(0, "BBBB");
+//		map1.put(0, "CCCC");
+//		map1.put(0, "DDDD");
+//		
+//		System.out.println(map1);
 		
 		HashMap<String, String> map2 = new HashMap<String, String>();
 		map2.put("name", "hello");
@@ -25,5 +25,7 @@ public class HashMapExample {
 			System.out.print("\t/ Value : ");
 			System.out.print(item.getValue() + "\n");
 		}
+		
+		System.out.println(map2.get("name"));
 	}
 }
